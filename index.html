@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduGenie</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="status-pill">AI study coach ready</div>
+        <h1>EduGenie</h1>
+        <p>AI-powered personalized learning for every student</p>
+      </header>
+
+      <main class="app-grid">
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Q&A</span>
+            <span class="feature-icon">❓</span>
+          </div>
+          <h2>Ask EduGenie a question</h2>
+          <textarea id="qnaInput" placeholder="Ask EduGenie a question..."></textarea>
+          <button onclick="sendRequest('/api/qna', 'qnaInput', 'qnaOutput')">Ask EduGenie</button>
+          <div id="qnaOutput" class="output-box">Response will appear here.</div>
+        </section>
+
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Explain</span>
+            <span class="feature-icon">💡</span>
+          </div>
+          <h2>Need an explanation</h2>
+          <textarea id="explainInput" placeholder="Enter a topic you need explained..."></textarea>
+          <button onclick="sendRequest('/api/explain', 'explainInput', 'explainOutput')">Explain it</button>
+          <div id="explainOutput" class="output-box">Response will appear here.</div>
+        </section>
+
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Summarize</span>
+            <span class="feature-icon">📝</span>
+          </div>
+          <h2>Summarise a paragraph</h2>
+          <textarea id="summaryInput" placeholder="Paste the paragraph you want summarised..."></textarea>
+          <button onclick="sendRequest('/api/summarize', 'summaryInput', 'summaryOutput')">Summarise</button>
+          <div id="summaryOutput" class="output-box">Response will appear here.</div>
+        </section>
+
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Quiz</span>
+            <span class="feature-icon">✅</span>
+          </div>
+          <h2>Generate a quiz</h2>
+          <textarea id="quizInput" placeholder="Enter a topic to generate a quiz..."></textarea>
+          <button onclick="sendRequest('/api/quiz', 'quizInput', 'quizOutput')">Generate quiz</button>
+          <div id="quizOutput" class="output-box">Response will appear here.</div>
+        </section>
+
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Path</span>
+            <span class="feature-icon">🧭</span>
+          </div>
+          <h2>Learning path</h2>
+          <textarea id="pathInput" placeholder="Enter your subject and level..."></textarea>
+          <button onclick="sendRequest('/api/learning-path', 'pathInput', 'pathOutput')">Build roadmap</button>
+          <div id="pathOutput" class="output-box">Response will appear here.</div>
+        </section>
+
+        <section class="feature-card">
+          <div class="feature-card-header">
+            <span class="feature-tag">Recommendations</span>
+            <span class="feature-icon">📚</span>
+          </div>
+          <h2>Get learning recommendations</h2>
+          <textarea id="recommendationInput" placeholder="Enter a subject to get learning recommendations..."></textarea>
+          <button onclick="sendRequest('/api/recommendations', 'recommendationInput', 'recommendationOutput')">Get recommendations</button>
+          <div id="recommendationOutput" class="output-box">Response will appear here.</div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
